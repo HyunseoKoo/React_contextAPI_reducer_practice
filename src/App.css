@@ -31,6 +31,7 @@
 
 .header__menus li:hover {
   cursor: pointer;
+  border-bottom: solid 1px pink;
 }
 .header__menus li:active {
   color: yellow;
