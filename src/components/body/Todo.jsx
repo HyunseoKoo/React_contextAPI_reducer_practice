@@ -1,20 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { FaTrash } from 'react-icons/fa';
 
 export default function Todo({todo, onDeleteTodoList}) {
     const [done, setDone] = useState(todo.checked);
-
+    // 완료여부 체크
     const onCheckedBox = (e) => {
-        // if(e.target.checked === false) {
-        //     setDone(true);
-        // } else {
-        //     setDone(false);
-        // }
-        // setDone((prev) => !prev)
         const localTodo = JSON.parse(localStorage.getItem('todoList'));
-        
-        // const findTodo = localTodo.filter((todo)=> todo.todo === e.target.title);
-        // console.log(findTodo);
         localTodo.map((todo) => {
             if(todo.todo === e.target.title) {
               todo.checked = e.target.checked;
